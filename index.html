@@ -7,17 +7,29 @@
 <title>Equipos en Venta</title>
 
 <style>
-body { font-family: Arial; margin: 0; background: #f5f7fa; }
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f7fa;
+}
 
+/* HEADER */
 header {
     background: linear-gradient(135deg,#1d3557,#457b9d);
     color: white;
     text-align: center;
-    padding: 25px;
+    padding: 30px;
 }
 
-.container { width: 90%; max-width: 1100px; margin: auto; padding: 20px; }
+/* CONTENEDOR */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px;
+}
 
+/* TARJETAS */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -26,21 +38,61 @@ header {
 
 .card {
     background: white;
-    border-radius: 12px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     cursor: pointer;
+    transition: 0.3s;
 }
 
-.card img { width: 100%; height: 220px; object-fit: cover; }
+.card:hover {
+    transform: scale(1.03);
+}
 
-.card-content { padding: 15px; }
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
 
-.price { color: #e63946; font-weight: bold; font-size:18px; }
+.card-content {
+    padding: 15px;
+}
+
+/* PRODUCTO */
+.producto {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* GALERÍA */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.gallery img,
+.gallery video {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* TEXTO */
+.price {
+    color: #e63946;
+    font-size: 22px;
+    font-weight: bold;
+}
 
 .btn {
     display: inline-block;
-    padding: 12px;
+    padding: 12px 15px;
     background: #e63946;
     color: white;
     border-radius: 6px;
@@ -48,20 +100,7 @@ header {
     margin-top: 10px;
 }
 
-.section { display: none; }
-.active { display: block; }
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 10px;
-}
-
-.gallery img, video {
-    width: 100%;
-    border-radius: 10px;
-}
-
+/* WHATSAPP */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -70,12 +109,16 @@ header {
     color: white;
     padding: 12px 18px;
     border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
 }
+
+/* SECCIONES */
+.section { display: none; }
+.active { display: block; }
+
 </style>
 
 </head>
@@ -96,7 +139,7 @@ header {
 <div class="card" onclick="mostrar('horno')">
     <img src="imagen1.jpg">
     <div class="card-content">
-        <h3>Horno Rotatorio 6 Latas</h3>
+        <h3>Horno Rotatorio</h3>
         <p class="price">$10,500,000</p>
     </div>
 </div>
@@ -104,7 +147,7 @@ header {
 <div class="card" onclick="mostrar('mojadora')">
     <img src="mojadora1.jpeg">
     <div class="card-content">
-        <h3>Amasadora Orion 25 lbs</h3>
+        <h3>Amasadora Orion</h3>
         <p class="price">$4,500,000</p>
     </div>
 </div>
@@ -117,7 +160,9 @@ header {
 
 <div id="horno" class="container section">
 
-<h2>Horno Panadero Rotatorio 6 Latas</h2>
+<div class="producto">
+
+<h2>🔥 Horno Rotatorio 6 Latas</h2>
 
 <div class="gallery">
 <img src="imagen1.jpg">
@@ -125,27 +170,21 @@ header {
 <img src="imagen3.jpg">
 </div>
 
-<h3>🔥 Descripción</h3>
-<p>
-Horno rotatorio industrial en excelente estado, listo para trabajar.
-Ideal para panadería o restaurante.
-</p>
-
-<ul>
-<li>6 latas</li>
-<li>Acero inoxidable</li>
-<li>Gas natural</li>
-<li>Cocción uniforme</li>
-</ul>
-
 <p class="price">$10,500,000</p>
+
+<p>✔ Acero inoxidable</p>
+<p>✔ Gas natural</p>
+<p>✔ Cocción uniforme</p>
+
 <p><strong>📞 302 479 1113</strong></p>
 
-<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20el%20horno%20rotatorio" target="_blank">
-📲 Consultar este producto
+<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20el%20horno" target="_blank">
+📲 Comprar
 </a>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
+
+</div>
 
 </div>
 
@@ -153,39 +192,34 @@ Ideal para panadería o restaurante.
 
 <div id="mojadora" class="container section">
 
-<h2>Amasadora Orion - 25 lbs</h2>
+<div class="producto">
+
+<h2>🔥 Amasadora Orion 25 lbs</h2>
 
 <div class="gallery">
 <img src="mojadora1.jpeg">
 <img src="mojadora2.jpeg">
 
 <video controls>
-    <source src="mojadoravideo.mp4" type="video/mp4">
+<source src="mojadoravideo.mp4">
 </video>
 </div>
 
-<h3>🔥 Descripción</h3>
-<p>
-Equipo de trabajo pesado ideal para producción constante.
-Mejora volumen, fermentación y calidad de masa.
-</p>
-
-<ul>
-<li>2 velocidades</li>
-<li>150 kg</li>
-<li>2 HP</li>
-<li>Trifásica</li>
-<li>110V</li>
-</ul>
-
 <p class="price">$4,500,000</p>
+
+<p>✔ 2 velocidades</p>
+<p>✔ Motor 2HP</p>
+<p>✔ Trabajo pesado</p>
+
 <p><strong>📞 302 479 1113</strong></p>
 
-<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20la%20amasadora%20Orion" target="_blank">
-📲 Consultar este producto
+<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20la%20amasadora" target="_blank">
+📲 Comprar
 </a>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
+
+</div>
 
 </div>
 
@@ -198,8 +232,8 @@ WhatsApp
 
 <script>
 function mostrar(seccion) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.getElementById(seccion).classList.add('active');
+document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+document.getElementById(seccion).classList.add('active');
 }
 </script>
 
