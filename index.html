@@ -1,3 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipos en Venta</title>
+
+<style>
+body { font-family: Arial; margin: 0; background: #f5f7fa; }
+
+header {
+    background: linear-gradient(135deg,#1d3557,#457b9d);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.container { width: 90%; max-width: 1100px; margin: auto; padding: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.card img { width: 100%; height: 220px; object-fit: cover; }
+
+.card-content { padding: 15px; }
+
+.price { color: #e63946; font-weight: bold; font-size:18px; }
+
+.btn {
+    display: inline-block;
+    padding: 12px;
+    background: #e63946;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.section { display: none; }
+.active { display: block; }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 10px;
+}
+
+.gallery img, video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Equipos en Venta</h1>
+<p>Bogotá - Barrios Unidos</p>
+</header>
+
+<!-- CATALOGO -->
+
+<div id="catalogo" class="container section active">
+
+<div class="grid">
+
+<div class="card" onclick="mostrar('horno')">
+    <img src="imagen1.jpg">
+    <div class="card-content">
+        <h3>Horno Rotatorio 6 Latas</h3>
+        <p class="price">$10,500,000</p>
+    </div>
+</div>
+
+<div class="card" onclick="mostrar('mojadora')">
+    <img src="mojadora1.jpeg">
+    <div class="card-content">
+        <h3>Amasadora Orion 25 lbs</h3>
+        <p class="price">$4,500,000</p>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- HORNO -->
+
+<div id="horno" class="container section">
+
+<h2>Horno Panadero Rotatorio 6 Latas</h2>
+
+<div class="gallery">
+<img src="imagen1.jpg">
+<img src="imagen2.jpg">
+<img src="imagen3.jpg">
+</div>
+
+<h3>🔥 Descripción</h3>
+<p>
+Horno rotatorio industrial en excelente estado, listo para trabajar.
+Ideal para panadería o restaurante.
+</p>
+
+<ul>
+<li>6 latas</li>
+<li>Acero inoxidable</li>
+<li>Gas natural</li>
+<li>Cocción uniforme</li>
+</ul>
+
+<p class="price">$10,500,000</p>
+<p><strong>📞 302 479 1113</strong></p>
+
+<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20el%20horno%20rotatorio" target="_blank">
+📲 Consultar este producto
+</a>
+
+<br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
+
+</div>
+
 <!-- MOJADORA -->
 
 <div id="mojadora" class="container section">
@@ -10,7 +161,6 @@
 
 <video controls>
     <source src="mojadoravideo.mp4" type="video/mp4">
-    Tu navegador no soporta video.
 </video>
 </div>
 
@@ -20,7 +170,6 @@ Equipo de trabajo pesado ideal para producción constante.
 Mejora volumen, fermentación y calidad de masa.
 </p>
 
-<h3>⚙️ Características</h3>
 <ul>
 <li>2 velocidades</li>
 <li>150 kg</li>
@@ -29,15 +178,30 @@ Mejora volumen, fermentación y calidad de masa.
 <li>110V</li>
 </ul>
 
-<p class="price">💰 Precio: $4,500,000</p>
-<p>🚚 Envío no incluido</p>
-<p><strong>📍 Ubicación:</strong> Bogotá, Barrios Unidos</p>
-<p><strong>📞 Contacto:</strong> 302 479 1113</p>
+<p class="price">$4,500,000</p>
+<p><strong>📞 302 479 1113</strong></p>
 
-<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20información%20de%20la%20amasadora%20Orion%20de%20$4.500.000" target="_blank">
+<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20la%20amasadora%20Orion" target="_blank">
 📲 Consultar este producto
 </a>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
 
 </div>
+
+<!-- WHATSAPP -->
+
+<a class="whatsapp" href="https://wa.me/57302479113" target="_blank">
+<img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20">
+WhatsApp
+</a>
+
+<script>
+function mostrar(seccion) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(seccion).classList.add('active');
+}
+</script>
+
+</body>
+</html>
