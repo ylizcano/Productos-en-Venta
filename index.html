@@ -7,13 +7,8 @@
 <title>Equipos en Venta</title>
 
 <style>
-body {
-    font-family: Arial;
-    margin: 0;
-    background: #f5f7fa;
-}
+body { font-family: Arial; margin: 0; background: #f5f7fa; }
 
-/* HEADER */
 header {
     background: linear-gradient(135deg,#1d3557,#457b9d);
     color: white;
@@ -21,7 +16,6 @@ header {
     padding: 30px;
 }
 
-/* CONTENEDOR */
 .container {
     width: 90%;
     max-width: 1000px;
@@ -29,7 +23,6 @@ header {
     padding: 20px;
 }
 
-/* TARJETAS */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
@@ -45,9 +38,7 @@ header {
     transition: 0.3s;
 }
 
-.card:hover {
-    transform: scale(1.03);
-}
+.card:hover { transform: scale(1.03); }
 
 .card img {
     width: 100%;
@@ -55,11 +46,8 @@ header {
     object-fit: cover;
 }
 
-.card-content {
-    padding: 15px;
-}
+.card-content { padding: 15px; }
 
-/* PRODUCTO */
 .producto {
     background: white;
     border-radius: 15px;
@@ -67,28 +55,27 @@ header {
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
-/* GALERÍA PRO */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.gallery img,
-.gallery video {
+.gallery img, .gallery video {
     width: 100%;
     height: 220px;
     object-fit: cover;
     border-radius: 10px;
 }
 
-/* TEXTO */
 .price {
     color: #e63946;
     font-size: 22px;
     font-weight: bold;
 }
+
+ul { padding-left: 20px; }
 
 .btn {
     display: inline-block;
@@ -100,7 +87,6 @@ header {
     margin-top: 10px;
 }
 
-/* WHATSAPP */
 .whatsapp {
     position: fixed;
     bottom: 20px;
@@ -115,10 +101,8 @@ header {
     text-decoration: none;
 }
 
-/* SECCIONES */
 .section { display: none; }
 .active { display: block; }
-
 </style>
 
 </head>
@@ -137,32 +121,30 @@ header {
 <div class="grid">
 
 <div class="card" onclick="mostrar('horno')">
-    <img src="imagen1.jpg">
-    <div class="card-content">
-        <h3>Horno Rotatorio</h3>
-        <p class="price">$10,500,000</p>
-    </div>
+<img src="imagen1.jpg">
+<div class="card-content">
+<h3>Horno Rotatorio</h3>
+<p class="price">$10,500,000</p>
+</div>
 </div>
 
 <div class="card" onclick="mostrar('mojadora')">
-    <img src="mojadora1.jpeg">
-    <div class="card-content">
-        <h3>Amasadora Orion</h3>
-        <p class="price">$4,500,000</p>
-    </div>
+<img src="mojadora1.jpeg">
+<div class="card-content">
+<h3>Amasadora Orion</h3>
+<p class="price">$4,500,000</p>
+</div>
 </div>
 
 </div>
-
 </div>
 
 <!-- HORNO -->
 
 <div id="horno" class="container section">
-
 <div class="producto">
 
-<h2>🔥 Horno Rotatorio 6 Latas</h2>
+<h2>🔥 Horno Rotatorio 6 Latas - Maquin Colombia</h2>
 
 <div class="gallery">
 <img src="imagen1.jpg">
@@ -172,34 +154,44 @@ header {
 
 <p class="price">$10,500,000</p>
 
-<p>✔ Acero inoxidable</p>
-<p>✔ Gas natural</p>
-<p>✔ Cocción uniforme</p>
+<h3>📋 Características</h3>
+<ul>
+<li>Capacidad para 6 latas</li>
+<li>Fabricado en acero inoxidable</li>
+<li>Funciona con gas natural</li>
+<li>Cocción homogénea por sistema rotatorio</li>
+<li>Puerta hermética con vidrio de seguridad</li>
+<li>Luz interior</li>
+<li>Sistema de vapor manual</li>
+<li>Aislamiento térmico en fibra de vidrio</li>
+<li>Bajo consumo de gas</li>
+<li>Apagado automático del quemador</li>
+<li>Control de temperatura y tiempo con alarma</li>
+<li>Protección de motores y quemador</li>
+<li>Incluye base escabiladero</li>
+</ul>
 
+<p><strong>📍 Bogotá - Barrios Unidos</strong></p>
 <p><strong>📞 302 479 1113</strong></p>
 
-<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20el%20horno" target="_blank">
-📲 Comprar
+<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20el%20horno%20rotatorio%20de%20$10.500.000" target="_blank">
+📲 Consultar este producto
 </a>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
 
 </div>
-
 </div>
 
 <!-- MOJADORA -->
 
 <div id="mojadora" class="container section">
-
 <div class="producto">
 
-<h2>🔥 Amasadora Orion 25 lbs</h2>
-
+<h2>🔥 Amasadora Orion 25 lbs - Maquin de Colombia</h2>
 <div class="gallery">
 <img src="mojadora1.jpeg">
 <img src="mojadora2.jpeg">
-
 <video controls>
 <source src="mojadoravideo.mp4" type="video/mp4">
 </video>
@@ -207,20 +199,34 @@ header {
 
 <p class="price">$4,500,000</p>
 
-<p>✔ 2 velocidades</p>
-<p>✔ Motor 2HP</p>
-<p>✔ Trabajo pesado</p>
+<h3>📋 Características</h3>
+<ul>
+<li>Incrementa la absorción de agua (mayor volumen de masa)</li>
+<li>Produce más unidades por proceso</li>
+<li>Fortalece la masa</li>
+<li>Mejora la fermentación y el gluten</li>
+<li>Ideal para trabajo pesado</li>
+<li>2 velocidades</li>
+<li>Dimensiones: 90 x 50 x 110 cm</li>
+<li>Olla: 49 cm diámetro x 35 cm altura</li>
+<li>Motor de 2 HP</li>
+<li>Trifásica</li>
+<li>Voltaje: 110V</li>
+<li>Peso aproximado: 150 kg</li>
+<li>Incluye olla en acero inoxidable</li>
+<li>Incluye gancho de amasado</li>
+</ul>
 
+<p><strong>📍 Bogotá - Barrios Unidos</strong></p>
 <p><strong>📞 302 479 1113</strong></p>
 
-<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20la%20amasadora" target="_blank">
-📲 Comprar
+<a class="btn" href="https://wa.me/57302479113?text=Hola%20quiero%20la%20amasadora%20Orion%20de%20$4.500.000" target="_blank">
+📲 Consultar este producto
 </a>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
 
 </div>
-
 </div>
 
 <!-- WHATSAPP -->
