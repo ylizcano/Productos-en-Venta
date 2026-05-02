@@ -85,6 +85,13 @@ ul { padding-left: 20px; }
     border-radius: 6px;
     text-decoration: none;
     margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background: #d62828;
 }
 
 .whatsapp {
@@ -99,6 +106,11 @@ ul { padding-left: 20px; }
     align-items: center;
     gap: 8px;
     text-decoration: none;
+    z-index: 1000;
+}
+
+.whatsapp:hover {
+    background: #20ba5c;
 }
 
 .section { display: none; }
@@ -162,11 +174,11 @@ ul { padding-left: 20px; }
 <p><strong>Energía:</strong> Trifásica ⚡</p>
 <p><strong>Incluye:</strong> Base escabiladero</p>
 
-<p><strong>📞 302 479 1113</strong></p>
+<p><strong>📞 3024791113</strong></p>
 
-<a class="btn" href="https://api.whatsapp.com/send?phone=573024791113&text=Hola%20quiero%20el%20horno%20rotatorio" target="_blank">
+<button class="btn" onclick="abrirWhatsapp('Hola%20quiero%20el%20horno%20rotatorio')">
 📲 Consultar este producto
-</a>
+</button>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
 
@@ -214,11 +226,11 @@ ul { padding-left: 20px; }
 <li>Voltaje: 110V</li>
 </ul>
 
-<p><strong>📞 302 479 1113</strong></p>
+<p><strong>📞 3024791113</strong></p>
 
-<a class="btn" href="https://api.whatsapp.com/send?phone=573024791113&text=Hola%20quiero%20la%20amasadora" target="_blank">
+<button class="btn" onclick="abrirWhatsapp('Hola%20quiero%20la%20amasadora')">
 📲 Consultar este producto
-</a>
+</button>
 
 <br><br> <button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
 
@@ -227,15 +239,23 @@ ul { padding-left: 20px; }
 
 <!-- BOTÓN WHATSAPP -->
 
-<a class="whatsapp" href="https://api.whatsapp.com/send?phone=573024791113&text=Hola%20estoy%20interesado%20en%20los%20equipos" target="_blank">
+<a class="whatsapp" onclick="abrirWhatsapp('Hola%20estoy%20interesado%20en%20los%20equipos')" style="cursor: pointer;">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="20">
 WhatsApp
 </a>
 
 <script>
+const telefonoWhatsapp = '573024791113'; // Número completo correcto
+
 function mostrar(seccion) {
-document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-document.getElementById(seccion).classList.add('active');
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(seccion).classList.add('active');
+    window.scrollTo(0, 0); // Scroll al inicio
+}
+
+function abrirWhatsapp(mensaje) {
+    const url = `https://wa.me/${telefonoWhatsapp}?text=${mensaje}`;
+    window.open(url, '_blank');
 }
 </script>
 
