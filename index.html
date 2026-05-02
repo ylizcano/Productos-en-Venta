@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Equipos en Venta</title>
+
+<style>
+body { font-family: Arial; margin: 0; background: #f5f7fa; }
+
+header {
+    background: linear-gradient(135deg,#1d3557,#457b9d);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.container { width: 90%; max-width: 1100px; margin: auto; padding: 20px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.card img { width: 100%; height: 220px; object-fit: cover; }
+
+.card-content { padding: 15px; }
+
+.price { color: #e63946; font-weight: bold; font-size:18px; }
+
+.btn {
+    display: inline-block;
+    padding: 10px;
+    background: #e63946;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.section { display: none; }
+.active { display: block; }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 10px;
+}
+
+.gallery img { width: 100%; border-radius: 10px; }
+
+.whatsapp {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Equipos en Venta</h1>
+<p>Bogotá - Barrios Unidos</p>
+</header>
+
+<!-- CATALOGO -->
+
+<div id="catalogo" class="container section active">
+
+<div class="grid">
+
+<div class="card" onclick="mostrar('horno')">
+    <img src="imagen1.jpg">
+    <div class="card-content">
+        <h3>Horno Rotatorio 6 Latas</h3>
+        <p class="price">$10,500,000</p>
+    </div>
+</div>
+
+<div class="card" onclick="mostrar('mojadora')">
+    <img src="mojadora.jpg">
+    <div class="card-content">
+        <h3>Amasadora Orion 25 lbs</h3>
+        <p class="price">$4,500,000</p>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+<!-- HORNO -->
+
+<div id="horno" class="container section">
+
+<h2>Horno Panadero Rotatorio 6 Latas</h2>
+
+<div class="gallery">
+<img src="imagen1.jpg">
+<img src="imagen2.jpg">
+<img src="imagen3.jpg">
+</div>
+
+<h3>🔥 Descripción</h3>
+<p>
+Horno rotatorio industrial en excelente estado, ideal para panaderías y restaurantes.
+Equipo robusto, eficiente y listo para trabajar.
+</p>
+
+<h3>⚙️ Características principales</h3>
+<ul>
+<li>Capacidad para 6 latas</li>
+<li>Fabricado en acero inoxidable</li>
+<li>Funciona con gas natural</li>
+<li>Cocción homogénea por sistema rotatorio</li>
+<li>Puerta hermética con vidrio de seguridad</li>
+<li>Luz interior</li>
+<li>Sistema de vapor manual</li>
+<li>Ahorro de energía (aislamiento térmico)</li>
+<li>Control de temperatura y tiempo con alarma</li>
+<li>Incluye escabiladero</li>
+</ul>
+
+<p class="price">💰 Precio: $10,500,000</p>
+<p>🚚 Envío no incluido</p>
+<p><strong>📍 Ubicación:</strong> Bogotá, Barrios Unidos</p>
+
+<br>
+<button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
+
+</div>
+
+<!-- MOJADORA -->
+
+<div id="mojadora" class="container section">
+
+<h2>Amasadora Orion - 25 lbs de harina</h2>
+
+<img src="mojadora.jpg">
+
+<h3>🔥 Descripción</h3>
+<p>
+Equipo de trabajo pesado que mejora el volumen, la fermentación y la calidad del gluten.
+Ideal para producción constante.
+</p>
+
+<h3>⚙️ Características</h3>
+<ul>
+<li>2 velocidades</li>
+<li>Dimensiones: 90 x 50 x 110 cm</li>
+<li>Olla: 49 x 35 cm</li>
+<li>Peso: 150 kg</li>
+<li>Trifásica</li>
+<li>110V</li>
+<li>Motor 2 HP</li>
+</ul>
+
+<h3>📦 Incluye</h3>
+<ul>
+<li>Olla en acero inoxidable</li>
+<li>Gancho de amasado</li>
+</ul>
+
+<p class="price">💰 Precio: $4,500,000</p>
+<p>🚚 Envío no incluido</p>
+<p><strong>📍 Ubicación:</strong> Bogotá, Barrios Unidos</p>
+
+<br>
+<button class="btn" onclick="mostrar('catalogo')">⬅ Volver</button>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/573001234567">💬</a>
+
+<script>
+function mostrar(seccion) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.getElementById(seccion).classList.add('active');
+}
+</script>
+
+</body>
+</html>
